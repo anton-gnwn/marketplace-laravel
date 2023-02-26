@@ -26,6 +26,7 @@
                     </a>
                 </div>
                 <div class="list-group list-group-flush">
+                    <a href="{{ route('home') }}" class="list-group-item list-group-item-action">Home</a>
                     <a href="{{ route('dashboard') }}"
                         class="list-group-item list-group-item-action {{ request()->is('dashboard') ? 'active' : '' }} ">Dashboard</a>
                     <a href="{{ route('dashboard-products') }}"

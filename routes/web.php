@@ -6,17 +6,18 @@ use App\Http\Controllers\CartController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\DetailController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\Admin\TransactionController;
 use App\Http\Controllers\DashboardProductsController;
 use App\Http\Controllers\DashboardSettingsController;
 use App\Http\Controllers\Admin\ProductGalleryController;
 use App\Http\Controllers\DashboardTransactionsController;
 use App\Http\Controllers\Admin\DashboardController as Admin;
 use App\Http\Controllers\Admin\CategoryController as Category;
-use App\Http\Controllers\CheckoutController;
 
 /*
 |--------------------------------------------------------------------------
@@ -89,6 +90,7 @@ Route::group(['middleware' => ['auth']], function () {
             ->name('dashboard-settings-account');
     Route::post('/dashboard/account/{redirect}', [DashboardSettingsController::class, 'update'])
             ->name('dashboard-settings-redirect');
+    
 
 });
 // middleware(['auth','admin']);
@@ -100,6 +102,7 @@ Route::prefix('admin')
         Route::resource('user', UserController::class);
         Route::resource('product', ProductController::class);
         Route::resource('product-gallery', ProductGalleryController::class);
+        Route::resource('transaction', TransactionController::class);
     });
 
 Auth::routes();

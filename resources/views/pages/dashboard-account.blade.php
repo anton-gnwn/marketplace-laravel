@@ -53,6 +53,7 @@
                                                 <label for="provinces_id">Province</label>
                                                 <select name="provinces_id" id="provinces_id" class="form-control" v-if="provinces" v-model="provinces_id">
                                                     {{-- <option value="{{ $user->provinces_id }}">{{ $user->provinces->name }}</option> --}}
+                                                    
                                                     <option v-for="province in provinces" :value="province.id"> @{{ province.name }}</option>
                                                 </select>
                                                 <select v-else class="form-control"></select>
